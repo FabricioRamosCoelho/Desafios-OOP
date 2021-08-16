@@ -10,16 +10,11 @@ namespace Imposto {
 
       public decimal Calcular(String documento, decimal salario)
       {
-          if(documento=="CNPJ")
-          {
-          return(salario*_aliquotaImpostoPessoaJuridica)/100;
+          this.getCnpj
+          return(salario*_AliquotaImpostoPessoaJuridica/100);
+           this.getCpf
+           return(salario*_AliquotaPessoaFisica/100);
+        
        }
-       else
-          if(documento=="CPF")
-       {
-       return(salario*_aliquotaImpostoPessoaFisica)/100;
     }
-    return 0;
-    }
-  }
 }
