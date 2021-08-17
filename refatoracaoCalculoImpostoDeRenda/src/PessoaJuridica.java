@@ -15,7 +15,8 @@ public class PessoaJuridica extends Aliquota {
 
     @Override
     public double calcularImposto() {
-        return this.getRendaBruta() * 0.1;
+        double renda = this.getRendaBruta();
+            return(renda)*27.5 *(0.01);
     }
 
     @Override

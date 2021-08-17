@@ -1,3 +1,4 @@
+
 public class PessoaFisica extends Aliquota {
     
     private String cpf;
@@ -12,7 +13,8 @@ public class PessoaFisica extends Aliquota {
 
     @Override
     public double calcularImposto() {
-         return this.getRendaBruta()*0.1;
+        double renda = this.getRendaBruta();
+            return(renda)*22.5 *(0.01);
        
     }
 
