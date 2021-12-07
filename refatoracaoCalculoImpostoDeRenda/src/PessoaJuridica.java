@@ -1,4 +1,3 @@
-
 public class PessoaJuridica extends Aliquota {
     
     private String cnpj;
@@ -15,8 +14,7 @@ public class PessoaJuridica extends Aliquota {
 
     @Override
     public double calcularImposto() {
-        double renda = this.getRendaBruta();
-            return(renda)*27.5 *(0.01);
+        return this.getRendaBruta()*27.5 * 0.01;
     }
 
     @Override

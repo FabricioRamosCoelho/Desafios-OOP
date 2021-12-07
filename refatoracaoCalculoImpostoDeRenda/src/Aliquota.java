@@ -1,4 +1,3 @@
-
 public abstract class Aliquota {
     
     private String nome;
@@ -25,6 +24,8 @@ public abstract class Aliquota {
     
     public abstract double calcularImposto();
 
+    
+    
     @Override
     public String toString() {
         String s = "Nome: " + nome;

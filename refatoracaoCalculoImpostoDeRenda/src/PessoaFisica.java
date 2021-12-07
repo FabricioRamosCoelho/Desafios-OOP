@@ -1,4 +1,6 @@
 
+import javax.swing.JFormattedTextField;
+
 public class PessoaFisica extends Aliquota {
     
     private String cpf;
@@ -8,13 +10,13 @@ public class PessoaFisica extends Aliquota {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        this.cpf =String.format("xxx.xxx.xxx-xx");
+        
     }
 
     @Override
     public double calcularImposto() {
-        double renda = this.getRendaBruta();
-            return(renda)*22.5 *(0.01);
+         return this.getRendaBruta()*22.5*0.01 ;
        
     }
 
@@ -27,6 +29,5 @@ public class PessoaFisica extends Aliquota {
         s += "]";
         return s;
     }
-    
     
 }
