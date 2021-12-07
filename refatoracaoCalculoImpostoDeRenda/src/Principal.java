@@ -42,7 +42,6 @@ public class Principal extends javax.swing.JFrame {
         c_calcular = new javax.swing.JButton();
         c_nome = new javax.swing.JTextField();
         c_renda = new javax.swing.JTextField();
-        c_calculo = new javax.swing.JTextField();
         c_cpf = new javax.swing.JFormattedTextField(createFormatter("###.###.###-##"));
         c_cnpj = new javax.swing.JFormattedTextField(createFormatter("##.###.###/####-##"));
         bt_1 = new javax.swing.JToggleButton();
@@ -81,8 +80,6 @@ public class Principal extends javax.swing.JFrame {
                 c_calcularActionPerformed(evt);
             }
         });
-
-        c_calculo.setEditable(false);
 
         c_cpf.setEditable(false);
 
@@ -131,9 +128,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(c_cnpj)
                             .addComponent(c_cpf))))
-                .addGap(18, 18, 18)
-                .addComponent(c_calculo, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addGap(223, 223, 223))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,9 +149,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(c_renda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(c_calcular)
-                    .addComponent(c_calculo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(c_calcular)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -170,6 +163,8 @@ public class Principal extends javax.swing.JFrame {
             c_cpf.setEditable(true);
             bt_2.setEnabled(false);
             c_cnpj.setEditable(false);
+           
+            
         } else{
             c_cpf.setEditable(false);
             bt_2.setEnabled(true);  
@@ -199,12 +194,14 @@ public class Principal extends javax.swing.JFrame {
 try{
         PessoaFisica dados = new PessoaFisica();
         dados.setRendaBruta(Double.parseDouble(c_renda.getText()));
-        c_calculo.setText(String.valueOf(dados.calcularImposto()));
+       
+        PessoaJuridica dados1 =new PessoaJuridica();
+        dados1.setRendaBruta(Double.parseDouble(c_renda.getText()));
         
         if (bt_1.isSelected()){
-        JOptionPane.showMessageDialog(rootPane, "seu nome é: " + c_nome.getText() + "\nseu cpf é: " + c_cpf.getText() + "\nVoce pagara: " + dados.calcularImposto() + " de imposto");
+        JOptionPane.showMessageDialog(rootPane, "seu nome é: " + c_nome.getText() + "\nseu cpf é: " + c_cpf.getText() + "\nVoce pagara: " + dados.calcularImposto()*22.5*0.01 + " de imposto");
         } else{
-          JOptionPane.showMessageDialog(rootPane, "seu nome é: " + c_nome.getText() + "\nseu cnpj é: " + c_cnpj.getText() + "\nVoce pagara: " + dados.calcularImposto() + " de imposto");  
+          JOptionPane.showMessageDialog(rootPane, "seu nome é: " + c_nome.getText() + "\nseu cnpj é: " + c_cnpj.getText() + "\nVoce pagara: " + dados.calcularImposto()*27.5 * 0.01 + " de imposto");  
         
         }
         }catch(NullPointerException npe ){
@@ -270,7 +267,6 @@ try{
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JButton c_calcular;
-    private javax.swing.JTextField c_calculo;
     private javax.swing.JFormattedTextField c_cnpj;
     private javax.swing.JFormattedTextField c_cpf;
     private javax.swing.JTextField c_nome;

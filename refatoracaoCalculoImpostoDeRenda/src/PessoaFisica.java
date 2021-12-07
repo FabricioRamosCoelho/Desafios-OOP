@@ -10,13 +10,13 @@ public class PessoaFisica extends Aliquota {
     }
 
     public void setCpf(String cpf) {
-        this.cpf =String.format("xxx.xxx.xxx-xx");
+        this.cpf=cpf;
         
     }
 
     @Override
     public double calcularImposto() {
-         return this.getRendaBruta()*22.5*0.01 ;
+         return this.getRendaBruta() ;
        
     }
 

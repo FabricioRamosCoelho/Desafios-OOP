@@ -120,9 +120,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="c_calculo" min="-2" pref="163" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="223" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -149,10 +147,7 @@
                   <Component id="c_renda" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="c_calcular" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="c_calculo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-              </Group>
+              <Component id="c_calcular" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -180,14 +175,6 @@
     <Component class="javax.swing.JTextField" name="c_nome">
     </Component>
     <Component class="javax.swing.JTextField" name="c_renda">
-    </Component>
-    <Component class="javax.swing.JTextField" name="c_calculo">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="c_cpf">
       <Properties>
